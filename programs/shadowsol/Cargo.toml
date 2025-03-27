@@ -1,0 +1,39 @@
+[package]
+name = "shadowsol"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+name = "shadowsol"
+crate-type = ["cdylib", "lib"]
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+
+idl-build = ["anchor-lang/idl-build"]
+
+[dependencies]
+anchor-lang = { version = "0.30.0", features = ["init-if-needed"] }
+anchor-spl = "0.30.0"
+solana-program = "1.18.0"
+bytemuck_derive = "1.8.1"
+hex-literal = "0.3.4"
+solana-poseidon = "2.2.5"
+
+thiserror = "1.0"
+ark-serialize = "0.4.2"
+ark-ec = "0.4.2"
+ark-ff = "0.4.2"
+ark-bn254 = "0.4.0"
+num-bigint = "0.4.6"
+
+[dev-dependencies]
+ark-std = "0.4.0"
+array-bytes = "6.2.2"
+serde = "1.0.195"
+serde_json = "1.0.111"
