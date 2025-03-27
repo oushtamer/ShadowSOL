@@ -183,9 +183,9 @@ pub struct DepositCtx<'info> {
 
     #[account(address = anchor_spl::token::ID)]
     pub token_program: Program<'info, Token>,
-
+    
     #[account(mut)]
-    pub system_program: Program<'info, System>,
+    pub system_program: UncheckedAccount<'info>,
 }
 
 #[derive(Accounts)]
@@ -219,7 +219,7 @@ pub struct WithdrawCtx<'info> {
     pub token_program: Program<'info, Token>,
 
     #[account(mut)]
-    pub system_program: Program<'info, System>,
+    pub system_program: UncheckedAccount<'info>,
 }
 
 #[error_code]
